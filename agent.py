@@ -291,7 +291,7 @@ This agent:
 - Stores it in FAISS for later comparison
 - Gets LLM approval before spending
 - Executes the transaction on Base Sepolia
-- Runs ML anomaly detection to verify the tx matched your intent
+- Runs rule-based verification to verify the tx matched your intent
 - Logs permanent proof on-chain
 """)
  
@@ -338,15 +338,15 @@ if st.button("Run Agent", type="primary"):
             else:
                 st.info("No transaction executed")
  
-        st.subheader("ML Verification")
+        st.subheader("Transaction Verification")
         deviation = result.get('deviation', False)
         if deviation:
             st.error(f"Deviation detected: {result.get('alert_message', '')}")
         else:
             if receipt.get('status') == 'success':
-                st.success("No deviation detected — agent acted within intent!")
+                st.success("No deviation detected — transaction verified!")
             else:
-                st.info("ML check complete")
+                st.info("Verification complete — no transaction to verify")
  
         approved = result.get('approved', False)
         if not approved:
