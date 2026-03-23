@@ -8,5 +8,5 @@ web3
 python-dotenv
 streamlit
 numpy
-scikit-learn
+
 
