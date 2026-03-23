@@ -1,7 +1,7 @@
 
 ## What this agent does
 
-This is an AI agent that executes Ethereum transactions on your behalf and verifies that every action matches your original intent. It uses LangGraph for orchestration, FAISS for semantic memory, an LLM for safety approval, and ML anomaly detection to guarantee the agent never deviates from what you asked.
+This is an AI agent that executes Ethereum transactions on your behalf and verifies that every action matches your original intent. It uses LangGraph for orchestration, FAISS for semantic memory, an LLM for safety approval, and  rule-based verification to guarantee the agent never deviates from what you asked.
 
 ## How to interact with it
 
@@ -16,7 +16,7 @@ The agent will:
 2. Store it in FAISS memory
 3. Run an LLM safety check
 4. Execute the transaction on Base Sepolia testnet
-5. Verify the transaction matched your intent using ML
+5. Verify the transaction matched your intent using rule-based checks
 6. Log permanent proof on-chain
 
 ## Live deployment
@@ -38,9 +38,7 @@ Base Sepolia testnet (chain ID: 84532)
 ## Trust layers
 
 1. LLM safety check — approves or rejects before any ETH moves
-2. ML anomaly detection — verifies after execution that agent acted within intent
+2. Rule-based verification — verifies after execution that agent acted within intent
 3. On-chain proof — every transaction permanently recorded on Base Sepolia
 
-## API
-
-No direct API — interact via the Streamlit UI at the deployed URL.
+Deployed on Streamlit Cloud: https://unxbhzu3adz3enm7xyloux.streamlit.app
