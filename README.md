@@ -10,14 +10,14 @@ An AI agent that executes Ethereum transactions on your behalf and verifies ever
 2. Stores your intent in FAISS memory
 3. LLM safety check approves or rejects before any ETH moves
 4. Executes the transaction on Base Sepolia testnet
-5. ML anomaly detection verifies the transaction matched your intent
+5. Rule-based verification checks the transaction matched your intent
 6. Logs permanent proof on-chain
 
 ## Trust layers
 
 - **Human-in-the-loop** — LLM approves before any ETH moves
-- **ML verification** — checks after execution that agent acted within intent
-- **On-chain proof** — every transaction permanently recorded on Base Sepolia
+* Rule-based verification — checks after execution that agent acted within intent
+* - **On-chain proof** — every transaction permanently recorded on Base Sepolia
 
 ## Stack
 
